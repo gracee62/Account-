@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accounting Made Easy</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mu:#5d6679;--ac:#4f46e5;--ok:#16a34a;--bad:#dc2626;--bd:#e3e6ee;--hl:#eef0ff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131c;--card:#1a1f2c;--tx:#eceff6;--mu:#9aa3b8;--ac:#8b86ff;--bd:#2b3245;--hl:#252a45}}
+:root[data-theme="dark"]{--bg:#10131c;--card:#1a1f2c;--tx:#eceff6;--mu:#9aa3b8;--ac:#8b86ff;--bd:#2b3245;--hl:#252a45}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:22px 16px 10px;text-align:center}
+h1{margin:0;font-size:1.7rem}header p{margin:4px 0 0;color:var(--mu)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+nav button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 12px;border-radius:20px;font-size:.9rem;cursor:pointer}
+nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{max-width:820px;margin:0 auto;padding:6px 14px 50px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin:12px 0}
+.card h3{margin:0 0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.big{font-size:2rem}
+.tip{background:var(--hl);border-left:4px solid var(--ac);padding:10px 12px;border-radius:8px;margin:10px 0}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{border:1px solid var(--bd);padding:6px 8px;text-align:left}
+td.n,th.n{text-align:right}
+th{background:var(--hl)}
+.fc{cursor:pointer;min-height:92px}
+.fc .a{display:none;color:var(--ok);font-weight:600}
+.fc.f .a{display:block}.fc.f .q{display:none}
+button.b{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:9px 14px;cursor:pointer;font-size:.95rem;margin:3px 3px 3px 0}
+button.o{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx);cursor:pointer;font-size:.95rem}
+button.o.r{border-color:var(--ok);background:rgba(22,163,74,.15)}button.o.w{border-color:var(--bad);background:rgba(220,38,38,.15)}
+input{width:100%;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font-size:1rem}
+.res{font-weight:700;color:var(--ok)}
+.hud{display:flex;justify-content:space-between;font-weight:700;margin-bottom:8px}.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;margin-bottom:8px}.bar i{display:block;height:100%;background:var(--ac)}.pill{display:inline-block;background:var(--hl);border-radius:12px;padding:2px 10px;font-size:.8rem;margin:2px}
+body{font-size:17px}
+header{background:linear-gradient(135deg,var(--ac),#7c3aed);color:#fff;padding:26px 16px 22px;border-radius:0 0 24px 24px}header p{color:#e8e6ff}
+nav{position:fixed!important;top:auto!important;bottom:0;left:0;right:0;gap:2px!important;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px))!important;background:var(--card)!important;border-top:1px solid var(--bd);box-shadow:0 -4px 16px rgba(0,0,0,.1);z-index:20}
+nav button{flex:0 0 68px!important;display:flex;flex-direction:column;align-items:center;gap:1px;border:0!important;background:transparent!important;color:var(--mu)!important;border-radius:12px!important;padding:6px 2px!important;min-height:52px}
+nav button span{font-size:1.35rem;line-height:1}nav button small{font-size:.66rem}
+nav button.on{background:var(--hl)!important;color:var(--ac)!important;font-weight:700}
+main{padding-bottom:110px}
+button.o{min-height:48px;font-size:1rem}button.b{min-height:46px}
+details.card summary{cursor:pointer;min-height:44px}details.card[open] summary{margin-bottom:8px}
+@media(max-width:480px){table{font-size:.8rem}th,td{padding:5px}h1{font-size:1.5rem}}
+</style></head><body>
+<header><div class="big">📘🧮</div><h1>Accounting Made Easy</h1><p>Class 11 Accountancy • 50 Marks • Learn, practice, win 💪</p></header>
+<nav id="nav"></nav>
+<main>
+
+<section id="focus">
+<div class="card"><h3>🎯 Exam Pattern (50 Marks, 2 Hours)</h3>
+<div class="grid">
+<div class="card">📝 <b>Group A</b><br>10 × 1 = 10 marks<br><small>Definitions. Easy marks!</small></div>
+<div class="card">✍️ <b>Group B</b><br>5 × 4 = 20 marks<br><small>Differences, rules, journal, cash account, trial balance</small></div>
+<div class="card">🏆 <b>Group C</b><br>2 × 10 = 20 marks<br><small>Journal + Ledger, Income Statement</small></div></div></div>
+<div class="card"><h3>🔥 What To Focus On (in order)</h3>
+<p>1️⃣ <b>Golden Rules</b> of Personal, Real, Nominal. Everything depends on these.<br>
+2️⃣ <b>Journal entries</b>. Practice 5–10 daily.<br>
+3️⃣ <b>Cash account</b> and <b>Ledger balances</b>.<br>
+4️⃣ <b>Trial balance</b>. Debit total must equal Credit total.<br>
+5️⃣ <b>Income statement</b>. COGS → Gross Profit → Net Profit.<br>
+6️⃣ <b>Definitions</b> (10 easy marks, learn with flashcards).</p></div>
+<div class="tip">💡 <b>Tonight's must-learn:</b> Personal = receiver Dr, giver Cr. Real = comes in Dr, goes out Cr. Nominal = expenses Dr, incomes Cr. Journal = first book. Ledger = principal book.</div>
+<div class="card"><h3>🗺️ Study Path</h3><p>Flashcards → Golden Rules → Journal → Ledger/Cash → Trial Balance → Income Statement → Quiz. Use the tabs above 👆</p></div>
+</section>
+
+<section id="cards"><div class="card"><h3>🃏 Flashcards: Group A (tap to flip)</h3><p class="mu">Say the answer in your head first, then tap.</p></div><div class="grid" id="fcs"></div></section>
+
+<section id="rules">
+<div class="card"><h3>🧑‍🤝‍🧑 1. Personal Account</h3><p>Persons, firms, companies. Example: Ram's A/c 👤</p>
+<div class="tip"><b>Debit the receiver, Credit the giver.</b></div><p>💸 Paid cash to Ram → <b>Ram A/c Dr.</b> (Ram received)</p></div>
+<div class="card"><h3>🏠 2. Real Account</h3><p>Assets and properties. Example: Cash, Furniture 🪑</p>
+<div class="tip"><b>Debit what comes in, Credit what goes out.</b></div><p>🪑 Bought furniture for cash → <b>Furniture A/c Dr.</b> (comes in), <b>Cash A/c Cr.</b> (goes out)</p></div>
+<div class="card"><h3>💼 3. Nominal Account</h3><p>Expenses, losses, incomes, gains. Example: Salary, Rent, Commission</p>
+<div class="tip"><b>Debit all expenses and losses, Credit all incomes and gains.</b></div><p>👷 Paid salary → <b>Salary A/c Dr.</b></p></div>
+<div class="card"><h3>🧪 Test yourself</h3><div id="rq"></div></div>
+</section>
+
+<section id="journal">
+<div class="card"><h3>📒 Journal = first book of original entry</h3><p>Every transaction has 2 sides: one Debit (Dr.), one Credit (Cr.). Steps: 1) Which accounts? 2) Which type? 3) Apply rule.</p></div>
+<div class="card"><h3>Worked example (Q13)</h3>
+<p>🏁 Started business with cash 50,000 • 🛒 Purchased goods for cash 10,000 • 💰 Sold goods for cash 15,000 • 🏢 Paid rent 3,000</p>
+<div class="wrap"><table><tr><th>Particulars</th><th class="n">Dr.</th><th class="n">Cr.</th></tr>
+<tr><td>Cash A/c Dr.</td><td class="n">50,000</td><td></td></tr><tr><td>&nbsp;&nbsp;To Capital A/c</td><td></td><td class="n">50,000</td></tr>
+<tr><td>Purchases A/c Dr.</td><td class="n">10,000</td><td></td></tr><tr><td>&nbsp;&nbsp;To Cash A/c</td><td></td><td class="n">10,000</td></tr>
+<tr><td>Cash A/c Dr.</td><td class="n">15,000</td><td></td></tr><tr><td>&nbsp;&nbsp;To Sales A/c</td><td></td><td class="n">15,000</td></tr>
+<tr><td>Rent A/c Dr.</td><td class="n">3,000</td><td></td></tr><tr><td>&nbsp;&nbsp;To Cash A/c</td><td></td><td class="n">3,000</td></tr></table></div></div>
+<div class="card"><h3>🎮 Practice: pick the DEBIT account</h3><div id="jq"></div></div>
+</section>
+
+<section id="ledger">
+<div class="card"><h3>📚 Ledger = principal book</h3><p>Each account gets its own page. Cash account shows money in (Dr. side, "To") and money out (Cr. side, "By").</p></div>
+<div class="card"><h3>Cash Account (Q14)</h3>
+<p>Capital 30,000 • Purchases 8,000 • Sales 12,000 • Salary 4,000</p>
+<div class="wrap"><table><tr><th>Dr.</th><th class="n">Rs.</th><th>Cr.</th><th class="n">Rs.</th></tr>
+<tr><td>To Capital</td><td class="n">30,000</td><td>By Purchases</td><td class="n">8,000</td></tr>
+<tr><td>To Sales</td><td class="n">12,000</td><td>By Salary</td><td class="n">4,000</td></tr>
+<tr><td></td><td></td><td>By Balance c/d</td><td class="n">30,000</td></tr>
+<tr><th>Total</th><th class="n">42,000</th><th>Total</th><th class="n">42,000</th></tr></table></div>
+<div class="tip">✅ Closing cash = 42,000 − 12,000 payments = <b>Rs. 30,000</b></div></div>
+<div class="card"><h3>Big Question 16: Final Balances</h3>
+<p>Transactions: Capital 80,000 • Purchases 20,000 • Furniture 10,000 • Sales 30,000 • Salary 5,000 • Rent 3,000 • Commission 4,000</p>
+<span class="pill">Cash 76,000</span><span class="pill">Capital 80,000</span><span class="pill">Purchases 20,000</span><span class="pill">Furniture 10,000</span><span class="pill">Sales 30,000</span><span class="pill">Salary 5,000</span><span class="pill">Rent 3,000</span><span class="pill">Commission 4,000</span>
+<p>🧠 Cash check: In = 80,000 + 30,000 + 4,000 = 114,000. Out = 20,000 + 10,000 + 5,000 + 3,000 = 38,000. Balance = <b>76,000</b>.</p></div>
+</section>
+
+<section id="tb">
+<div class="card"><h3>⚖️ Trial Balance</h3><p>A statement of ledger balances to check arithmetical accuracy.</p>
+<p><b>4 Objectives:</b> 1) check accuracy 2) summarize ledger balances 3) help prepare final accounts 4) help locate certain errors</p></div>
+<div class="card"><h3>Trial Balance from Q16 balances</h3><div class="wrap"><table>
+<tr><th>Account</th><th class="n">Debit</th><th class="n">Credit</th></tr>
+<tr><td>Cash</td><td class="n">76,000</td><td></td></tr><tr><td>Purchases</td><td class="n">20,000</td><td></td></tr>
+<tr><td>Furniture</td><td class="n">10,000</td><td></td></tr><tr><td>Salary</td><td class="n">5,000</td><td></td></tr><tr><td>Rent</td><td class="n">3,000</td><td></td></tr>
+<tr><td>Capital</td><td></td><td class="n">80,000</td></tr><tr><td>Sales</td><td></td><td class="n">30,000</td></tr><tr><td>Commission</td><td></td><td class="n">4,000</td></tr>
+<tr><th>Total</th><th class="n">114,000</th><th class="n">114,000</th></tr></table></div>
+<div class="tip">🎉 Both sides equal at 114,000, so the books tally. Memory trick: assets and expenses sit on Debit; capital, sales and incomes on Credit.</div></div>
+</section>
+
+<section id="is">
+<div class="card"><h3>📈 Income Statement Calculator</h3><p>Change numbers and see the answer. Defaults are Q17.</p>
+<div class="grid" id="inp"></div><br>
+<p>🏭 COGS = Opening Stock + Purchases − Closing Stock = <span class="res" id="c">0</span></p>
+<p>💹 Gross Profit = Sales − COGS = <span class="res" id="g">0</span></p>
+<p>🏁 Net Profit = Gross Profit + Other Income − Expenses = <span class="res" id="n">0</span></p></div>
+<div class="tip">If Net Profit is negative, it is a Net Loss 📉.</div>
+</section>
+
+<section id="tips">
+<div class="card"><h3>📒 Make a Journal entry in 4 steps</h3><p>1️⃣ Find the <b>two accounts</b> in the transaction.<br>2️⃣ Decide the <b>type</b> of each (Personal / Real / Nominal).<br>3️⃣ Apply the <b>rule</b> to find which is Dr. and which is Cr.<br>4️⃣ Write <b>Dr. first</b>, then "To" + Cr. account (slightly to the right), the <b>same amount</b> on both sides, and a short <b>narration</b> in brackets.</p></div>
+<div class="card"><h3>⚡ Quick Dr./Cr. cheat sheet</h3><div class="wrap"><table><tr><th>Situation</th><th>Entry</th></tr>
+<tr><td>💵 Money comes in</td><td>Dr. Cash</td></tr><tr><td>💸 Money goes out</td><td>Cr. Cash</td></tr>
+<tr><td>🧾 Expense paid (rent, salary)</td><td>Dr. Expense</td></tr><tr><td>🎁 Income received (commission)</td><td>Cr. Income</td></tr>
+<tr><td>🏁 Owner starts business</td><td>Cr. Capital</td></tr><tr><td>🪑 Asset bought</td><td>Dr. Asset</td></tr>
+<tr><td>🛒 Goods bought / sold</td><td>Dr. Purchases / Cr. Sales</td></tr></table></div></div>
+<div class="card"><h3>🚫 Common mistakes</h3><p>❌ Forgetting "To" before the credit account<br>❌ Dr. total not equal to Cr. total<br>❌ Mixing Purchases and Sales<br>❌ Putting Balance c/d on the wrong side<br>❌ Forgetting the narration</p></div>
+<div class="card"><h3>📚 Make a Ledger in 5 steps</h3><p>1️⃣ Draw a T-shape for each account and write its name.<br>2️⃣ Copy from the journal: if the account is <b>debited</b>, write on the left <b>"To" + the other account</b>.<br>3️⃣ If it is <b>credited</b>, write on the right <b>"By" + the other account</b>.<br>4️⃣ Add both sides. The difference goes on the <b>smaller side</b> as <b>Balance c/d</b>.<br>5️⃣ Write both totals on the same line. Balance b/d starts the next period.</p></div>
+<div class="card"><h3>🏪 Live example: Hari's Shop</h3><p>Tap <b>Next</b> to post one transaction at a time. Watch the journal, ledgers and trial balance grow.</p>
+<button class="b" onclick="hn()">➡️ Next</button><button class="b" onclick="ha()">⏭️ Show all</button><button class="b" onclick="hz()">⏮️ Restart</button>
+<div class="tip" id="hh"></div><h4>📒 Journal</h4><div class="wrap" id="hj"></div><h4>📚 Ledger accounts</h4><div id="hl" class="grid" style="grid-template-columns:repeat(auto-fit,minmax(270px,1fr))"></div><h4>⚖️ Trial balance</h4><div class="wrap" id="ht"></div></div>
+</section>
+<section id="mcq"><div class="card"><h3>📝 MCQ Bank: 1 mark each</h3><p>Tap an answer. Green is correct. Score: <b id="ms">0</b> <button class="b" onclick="mb()">🔀 Shuffle</button></p></div><div class="card" id="mb"></div></section>
+<section id="five"><div class="card"><h3>✍️ 5-Mark Questions with Answers</h3><p>Try on paper first, then tap to open the answer.</p></div><div id="fm"></div></section>
+<section id="quiz"><div class="card" id="game"></div></section>
+
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const tabs=[["focus","🎯 Focus"],["cards","🃏 Cards"],["rules","📏 Rules"],["tips","💡 Tips"],["journal","📒 Journal"],["ledger","📚 Ledger"],["tb","⚖️ Trial Bal"],["is","📈 Income"],["mcq","📝 MCQ"],["five","✍️ 5 Marks"],["quiz","🎮 Game"]];
+tabs.forEach(([id,l])=>{const b=document.createElement("button");const p=l.split(" ");b.innerHTML="<span>"+p[0]+"</span><small>"+p.slice(1).join(" ")+"</small>";b.onclick=()=>show(id);b.id="t"+id;$("nav").appendChild(b)});
+function show(id){tabs.forEach(([t])=>{$(t).classList.toggle("on",t==id);$("t"+t).classList.toggle("on",t==id)});$("t"+id).scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});scrollTo(0,0)}
+show("focus");
+const fc=[["📖 What is bookkeeping?","Recording financial transactions of a business systematically and regularly."],["🧮 What is accounting?","Recording, classifying, summarizing and interpreting financial transactions."],["📒 What is a journal?","A book where transactions are recorded in chronological order."],["📚 What is a ledger?","The principal book where all accounts are kept separately."],["⬅️ What is Debit?","The left-hand side of an account."],["➡️ What is Credit?","The right-hand side of an account."],["⚖️ What is a trial balance?","A statement to check the arithmetical accuracy of ledger accounts."],["💼 Nominal account?","Related to expenses, losses, incomes, gains. Example: Salary A/c."],["🏠 Real account?","Related to assets and properties. Example: Cash A/c."],["👤 Personal account?","Related to persons, firms, companies. Example: Ram's A/c."]];
+fc.forEach(([q,a])=>{const d=document.createElement("div");d.className="card fc";d.innerHTML=`<div class="q">${q}<br><small>tap to flip 👆</small></div><div class="a">${a}</div>`;d.onclick=()=>d.classList.toggle("f");$("fcs").appendChild(d)});
+function mcq(el,items,cb){let s=0;items.forEach(([q,opts,ans,why])=>{const w=document.createElement("div");w.innerHTML=`<p><b>${q}</b></p>`;let done=0;opts.forEach((o,i)=>{const b=document.createElement("button");b.className="o";b.textContent=o;b.onclick=()=>{if(done)return;done=1;b.classList.add(i==ans?"r":"w");if(i==ans){s++;cb&&cb(s)}else w.children[ans+1].classList.add("r");const e=document.createElement("small");e.textContent=(i==ans?"✅ ":"❌ ")+why;w.appendChild(e)};w.appendChild(b)});el.appendChild(w)})}
+mcq($("rq"),[["Paid cash to Ram. Which rule?",["Debit what comes in","Debit the receiver (Ram)","Debit expenses"],1,"Ram is a personal account: debit the receiver."],["Bought furniture for cash. Furniture is…",["Real: debit what comes in","Nominal","Personal"],0,"Furniture is an asset, so a real account."],["Paid salary. Salary A/c is…",["Credited","Debited","Not recorded"],1,"Salary is an expense: debit it."],["Received commission. Commission A/c is…",["Debited","Credited","Real account"],1,"Commission is income: credit it."]]);
+mcq($("jq"),[["Started business with cash Rs. 50,000",["Capital A/c","Cash A/c","Sales A/c"],1,"Cash comes in (real). Capital is credited."],["Purchased goods for cash",["Purchases A/c","Cash A/c","Sales A/c"],0,"Purchases is an expense, so debit it."],["Sold goods for cash",["Sales A/c","Cash A/c","Purchases A/c"],1,"Cash comes in. Sales is credited."],["Paid rent Rs. 3,000",["Cash A/c","Rent A/c","Capital A/c"],1,"Rent is an expense, so debit it."],["Received commission Rs. 4,000",["Cash A/c","Commission A/c","Salary A/c"],0,"Cash comes in, so debit Cash."]]);
+const QZ=[["What is a journal?",["Principal book","Book of original entry","Statement of balances"],1,"Journal = first book of original entry."],["Debit means…",["Right side","Left side","Total"],1,"Debit = left side."],["Credit means…",["Right side","Left side","Balance"],0,"Credit = right side."],["Which is a nominal account?",["Cash A/c","Salary A/c","Ram's A/c"],1,"Salary is an expense."],["Which is a real account?",["Furniture A/c","Rent A/c","Ram's A/c"],0,"Furniture is an asset."],["Which is a personal account?",["Cash A/c","Sales A/c","Ram's A/c"],2,"Ram is a person."],["Trial balance checks…",["Profit","Arithmetical accuracy","Stock"],1,"It checks arithmetical accuracy."],["COGS formula?",["Sales − Purchases","Opening Stock + Purchases − Closing Stock","Gross Profit − Expenses"],1,"COGS = Opening + Purchases − Closing."],["Net Profit = ?",["Gross Profit + Other Income − Expenses","Sales − Purchases","Capital − Drawings"],0,"Add other income, subtract expenses."],["Real account rule?",["Debit receiver","Debit what comes in, credit what goes out","Debit expenses"],1,"That is the real account rule."],["Ledger is…",["First book","Principal book","Cash book only"],1,"Ledger = principal book."],["Paid salary. Which account is debited?",["Cash A/c","Salary A/c","Capital A/c"],1,"Salary is an expense: debit."],["Sold goods for cash. Which is credited?",["Sales A/c","Cash A/c","Purchases A/c"],0,"Sales is income: credit."],["Started business with cash. Which is credited?",["Cash A/c","Capital A/c","Sales A/c"],1,"Capital is credited, cash is debited."],["Sales 100,000, COGS 55,000. Gross Profit?",["45,000","55,000","155,000"],0,"100,000 − 55,000 = 45,000."],["Received commission. Commission A/c is…",["Debited","Credited","Ignored"],1,"Income is credited."]];
+const RANKS=["🐣 Beginner","📘 Learner","🧮 Pro","🏆 Master","👑 Legend"];
+let G;const T=15;
+function best(){try{return +localStorage.getItem("accbest")||0}catch(e){return 0}}
+function saveBest(x){try{localStorage.setItem("accbest",x)}catch(e){}}
+function shuf(a){return a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1])}
+function start(){G={l:3,xp:0,st:0,ms:0,i:0,ok:0,q:shuf(QZ),t:T,iv:null};next()}
+function hud(){return `<div class="hud"><span>${"❤️".repeat(G.l)||"💀"}</span><span>🔥 ${G.st}</span><span>⭐ ${G.xp} XP</span><span>Lv ${1+Math.floor(G.xp/100)}</span></div><div class="bar"><i id="tb" style="width:${G.t/T*100}%"></i></div>`}
+function home(){$("game").innerHTML=`<div style="text-align:center"><div class="big">🎮</div><h3>Accounting Arena</h3><p>Answer fast. Keep your ❤️❤️❤️ lives. Build 🔥 streaks for bonus XP. ${T} seconds per question!</p><p>🏅 Best score: <b>${best()} XP</b></p><button class="b" onclick="start()">▶️ Start Game</button></div>`}
+function next(){clearInterval(G.iv);if(G.l<=0||G.i>=G.q.length)return end();const [q,o,a,w]=G.q[G.i];const ord=shuf(o.map((t,i)=>[t,i]));G.t=T;G.done=0;
+$("game").innerHTML=hud()+`<p><small>Question ${G.i+1} / ${G.q.length}</small></p><p><b>${q}</b></p><div id="ops"></div><div id="fb"></div>`;
+ord.forEach(([t,i])=>{const b=document.createElement("button");b.className="o";b.textContent=t;b.dataset.i=i;b.onclick=()=>pick(b,i==a,a,w);$("ops").appendChild(b)});
+G.iv=setInterval(()=>{G.t-=.1;const e=$("tb");if(e)e.style.width=Math.max(G.t,0)/T*100+"%";if(G.t<=0){clearInterval(G.iv);pick(null,false,a,w,1)}},100)}
+function pick(b,right,a,w,to){if(G.done)return;G.done=1;clearInterval(G.iv);
+[...$("ops").children].forEach(x=>{if(+x.dataset.i==a)x.classList.add("r")});
+let m;if(right){const bonus=Math.min(G.st,5)*2,tb=Math.ceil(G.t);const g=10+bonus+tb;G.xp+=g;G.st++;G.ms=Math.max(G.ms,G.st);G.ok++;m=`✅ Correct! +${g} XP (${bonus?"streak +"+bonus+", ":""}speed +${tb})`}
+else{if(b)b.classList.add("w");G.l--;G.st=0;m=to?"⏰ Time up! −1 ❤️":"❌ Wrong! −1 ❤️"}
+G.i++;$("fb").innerHTML=`<div class="tip">${m}<br><small>${w}</small></div><button class="b" onclick="next()">${G.l<=0||G.i>=G.q.length?"See result 🏁":"Next ➡️"}</button>`}
+function end(){clearInterval(G.iv);const n=G.q.length,r=Math.min(4,Math.floor(G.xp/120));const nb=G.xp>best();if(nb)saveBest(G.xp);
+const bd=[];if(G.ok==n)bd.push("🌟 Perfect Run");if(G.ms>=5)bd.push("🔥 5-Streak");if(G.l==3)bd.push("🛡️ No Lives Lost");if(G.xp>=300)bd.push("💎 300 XP Club");if(G.ok>=10)bd.push("🧠 10 Correct");
+$("game").innerHTML=`<div style="text-align:center"><div class="big">${G.l>0?"🏆":"💀"}</div><h3>${G.l>0?"Game Complete!":"Game Over"}</h3><p>Rank: <b>${RANKS[r]}</b></p><p>⭐ ${G.xp} XP • ✅ ${G.ok}/${n} correct • 🔥 best streak ${G.ms}</p>${nb?"<p>🎉 New best score!</p>":""}<p>${bd.map(x=>`<span class="pill">${x}</span>`).join("")||"No badges yet. Try again!"}</p><button class="b" onclick="start()">🔄 Play Again</button></div>`}
+home();
+const MQ=["Accounting equation?|Assets = Capital + Liabilities|Assets = Capital − Liabilities|Capital = Assets + Liabilities|Assets are funded by owner (capital) and outsiders (liabilities).","Cash A/c always has a…|Debit balance|Credit balance|Nil balance|Cash in hand cannot be negative, so it is a debit balance.","Rent paid is a…|Nominal account (expense)|Real account|Personal account|Rent is an expense, so debit it.","Total debits in a trial balance equal…|Total credits|Total sales|Capital|Double entry means both sides tally.","Posting means…|Transferring journal entries to the ledger|Writing the bill|Closing the books|Journal to ledger is called posting.","Cash A/c has receipts more than payments. Balance c/d is on the…|Credit side|Debit side|Either side|The smaller side takes the balancing figure.","A journal entry has how many sides?|Two (Dr. and Cr.)|One|Three|Every entry has a debit and a credit.","Opening stock is…|Stock at the start of the period|Stock at the end|Stock sold|It is brought forward from last period.","Commission received is…|Income|Expense|Asset|Money earned is an income, so credit it.","Which is an asset?|Furniture|Rent|Salary|Furniture is owned and has value.","Which is an expense?|Rent|Capital|Sales|Rent is a cost of running the business.","Gross Profit = ?|Sales − COGS|Sales + COGS|Net Profit − Expenses|Gross Profit = Sales − Cost of Goods Sold.","Narration is…|A short explanation of the entry|The amount|The date|It is written in brackets below the entry.","L.F. stands for…|Ledger Folio|Last Figure|Loss Fund|It is the ledger page number.","Double entry means every transaction affects…|At least two accounts|One account|Three books|Each entry has a Dr. and a Cr.","Drawings means…|Owner takes cash or goods for personal use|Paying salary|Buying furniture|It reduces the owner's capital.","Sales is credited because it is an…|Income|Asset|Liability|Incomes and gains are credited.","Total of the debit side of a cash account equals…|Total of the credit side after balancing|Capital|Sales|Both totals are written on the same line.","Which normally has a debit balance?|Cash A/c|Capital A/c|Sales A/c|Assets and expenses have debit balances.","Which normally has a credit balance?|Sales A/c|Rent A/c|Purchases A/c|Incomes and capital have credit balances.","Bought furniture for cash. Which is credited?|Cash A/c|Furniture A/c|Capital A/c|Cash goes out, so credit it.","Chronological order means…|In date order|Alphabetical order|Random order|The journal is written in date order.","A debtor is a person who…|Owes money to us|We owe money to|Owns the business|Debtor means a person who has to pay us.","A creditor is a person…|To whom we owe money|Who owes us|Who is the owner|Creditor means we have to pay him."];
+const parse=p=>{const a=p.split("|");return [a[0],a.slice(1,4),0,a[4]]};
+const sh=it=>{const p=shuf(it[1].map((t,i)=>[t,i]));return [it[0],p.map(x=>x[0]),p.findIndex(x=>x[1]==it[2]),it[3]]};
+QZ.push(...MQ.map(parse));
+function mb(){$("mb").innerHTML="";$("ms").textContent=0;mcq($("mb"),shuf(MQ.map(parse)).map(sh),n=>$("ms").textContent=n)}mb();
+const FM=[["Write five differences between bookkeeping and accounting.","1. Bookkeeping records; accounting records, classifies, summarizes and interprets.<br>2. Bookkeeping is the basic stage; accounting is the next, wider stage.<br>3. Bookkeeping needs little knowledge; accounting needs deep knowledge.<br>4. Bookkeeping gives no analysis; accounting gives analysis and decisions.<br>5. Bookkeeping ends at the ledger; accounting ends at final accounts."],
+["Explain the golden rules of accounts with one example each.","<b>Personal:</b> Debit the receiver, Credit the giver. Paid cash to Ram → Ram A/c Dr.<br><b>Real:</b> Debit what comes in, Credit what goes out. Furniture bought → Furniture A/c Dr.<br><b>Nominal:</b> Debit expenses and losses, Credit incomes and gains. Salary paid → Salary A/c Dr."],
+["Journalize: Started business with cash 40,000; bought goods for cash 15,000; sold goods for cash 20,000; paid wages 2,000; bought furniture for cash 5,000.","1. Cash A/c Dr. 40,000 / To Capital A/c 40,000<br>2. Purchases A/c Dr. 15,000 / To Cash A/c 15,000<br>3. Cash A/c Dr. 20,000 / To Sales A/c 20,000<br>4. Wages A/c Dr. 2,000 / To Cash A/c 2,000<br>5. Furniture A/c Dr. 5,000 / To Cash A/c 5,000"],
+["Write any five objectives of accounting.","1. Keep a systematic record of transactions.<br>2. Find the profit or loss.<br>3. Show the financial position (assets and liabilities).<br>4. Give information to owners, banks and tax offices.<br>5. Help in decisions and legal matters."],
+["Prepare the Cash Account: Capital 50,000; Purchases 12,000; Sales 20,000; Rent 3,000; Salary 5,000.","<b>Dr.:</b> To Capital 50,000, To Sales 20,000 = <b>70,000</b><br><b>Cr.:</b> By Purchases 12,000, By Rent 3,000, By Salary 5,000, By Balance c/d 50,000 = <b>70,000</b><br>Closing cash = Rs. 50,000"],
+["Prepare a Trial Balance: Cash 50,000; Purchases 12,000; Rent 3,000; Salary 5,000; Capital 50,000; Sales 20,000.","<b>Debit:</b> Cash 50,000 + Purchases 12,000 + Rent 3,000 + Salary 5,000 = <b>70,000</b><br><b>Credit:</b> Capital 50,000 + Sales 20,000 = <b>70,000</b><br>Both sides are equal, so the trial balance agrees."],
+["Write five differences between a journal and a ledger.","1. Journal is the book of original entry; ledger is the principal book.<br>2. Journal is in date order; ledger is account-wise.<br>3. Journal is the first stage; ledger is the second.<br>4. Journal has Dr./Cr. with narration; ledger has To/By.<br>5. Journal has no balancing; ledger accounts are balanced."],
+["Calculate Gross Profit and Net Profit: Sales 80,000; Opening Stock 10,000; Purchases 50,000; Closing Stock 12,000; Expenses 6,000; Other Income 2,000.","COGS = 10,000 + 50,000 − 12,000 = <b>48,000</b><br>Gross Profit = 80,000 − 48,000 = <b>32,000</b><br>Net Profit = 32,000 + 2,000 − 6,000 = <b>28,000</b>"],
+["Explain the five steps of the accounting cycle.","1. Identify the transaction.<br>2. Record it in the journal.<br>3. Post it to the ledger.<br>4. Prepare the trial balance.<br>5. Prepare the final accounts (income statement and balance sheet)."],
+["Journalize: Bought furniture 8,000 cash; paid salary 3,000; received commission 1,500; owner withdrew cash 2,000 for personal use; bought goods 6,000 cash.","1. Furniture A/c Dr. 8,000 / To Cash A/c 8,000<br>2. Salary A/c Dr. 3,000 / To Cash A/c 3,000<br>3. Cash A/c Dr. 1,500 / To Commission A/c 1,500<br>4. Drawings A/c Dr. 2,000 / To Cash A/c 2,000<br>5. Purchases A/c Dr. 6,000 / To Cash A/c 6,000"]];
+FM.forEach(([q,a],i)=>{const d=document.createElement("details");d.className="card";d.innerHTML=`<summary><b>${i+1}. ${q}</b> <span class="pill">5 marks</span></summary><p>${a}</p>`;$("fm").appendChild(d)});
+const HT=[["Business started with cash","Cash","Capital",60000],["Goods purchased for cash","Purchases","Cash",20000],["Furniture bought for cash","Furniture","Cash",10000],["Goods sold for cash","Cash","Sales",25000],["Rent paid","Rent","Cash",4000],["Salary paid","Salary","Cash",3000],["Commission received","Cash","Commission",2000]];
+const TY={Cash:"Real",Capital:"Personal (owner)",Purchases:"Nominal",Furniture:"Real",Sales:"Nominal",Rent:"Nominal",Salary:"Nominal",Commission:"Nominal"};
+let hk=1;const sm=a=>a.reduce((x,y)=>x+y[1],0);
+function hr(){const L=HT.slice(0,hk),f=n=>n.toLocaleString(),t=HT[hk-1];
+$("hh").innerHTML=`<b>Step ${hk}/${HT.length}:</b> ${t[0]} (Rs. ${f(t[3])})<br>${t[1]} (${TY[t[1]]}) → <b>Debit</b><br>${t[2]} (${TY[t[2]]}) → <b>Credit</b>`;
+$("hj").innerHTML='<table><tr><th>#</th><th>Particulars</th><th class="n">Dr.</th><th class="n">Cr.</th></tr>'+L.map((x,i)=>`<tr><td>${i+1}</td><td>${x[1]} A/c Dr.</td><td class="n">${f(x[3])}</td><td></td></tr><tr><td></td><td>&nbsp;&nbsp;To ${x[2]} A/c</td><td></td><td class="n">${f(x[3])}</td></tr><tr><td></td><td colspan="3"><small>(${x[0]})</small></td></tr>`).join("")+"</table>";
+let h="",tb=[];[...new Set(L.flatMap(x=>[x[1],x[2]]))].forEach(a=>{const D=[],C=[];L.forEach(x=>{if(x[1]==a)D.push(["To "+x[2],x[3]]);if(x[2]==a)C.push(["By "+x[1],x[3]])});
+const sd=sm(D),sc=sm(C);tb.push([a,sd-sc]);if(sd>sc)C.push(["By Balance c/d",sd-sc]);else if(sc>sd)D.push(["To Balance c/d",sc-sd]);
+const tot=Math.max(sd,sc),n=Math.max(D.length,C.length);let r="";for(let i=0;i<n;i++)r+=`<tr><td>${D[i]?D[i][0]:""}</td><td class="n">${D[i]?f(D[i][1]):""}</td><td>${C[i]?C[i][0]:""}</td><td class="n">${C[i]?f(C[i][1]):""}</td></tr>`;
+h+=`<div class="card" style="margin:0"><b>${a} A/c</b> <span class="pill">${TY[a]}</span><div class="wrap"><table><tr><th>Dr.</th><th class="n">Rs.</th><th>Cr.</th><th class="n">Rs.</th></tr>${r}<tr><th>Total</th><th class="n">${f(tot)}</th><th>Total</th><th class="n">${f(tot)}</th></tr></table></div></div>`});
+$("hl").innerHTML=h;const dt=tb.filter(x=>x[1]>0).reduce((p,x)=>p+x[1],0),ct=tb.filter(x=>x[1]<0).reduce((p,x)=>p-x[1],0);
+$("ht").innerHTML='<table><tr><th>Account</th><th class="n">Debit</th><th class="n">Credit</th></tr>'+tb.map(x=>`<tr><td>${x[0]}</td><td class="n">${x[1]>0?f(x[1]):""}</td><td class="n">${x[1]<0?f(-x[1]):""}</td></tr>`).join("")+`<tr><th>Total</th><th class="n">${f(dt)}</th><th class="n">${f(ct)}</th></tr></table><p>${dt==ct?"✅ Both sides equal. The books tally!":"⚠️ Not equal"}</p>`}
+function hn(){hk=Math.min(HT.length,hk+1);hr()}function ha(){hk=HT.length;hr()}function hz(){hk=1;hr()}hr();
+const F=[["Sales",100000],["Purchases",60000],["Opening Stock",15000],["Closing Stock",20000],["Salary",8000],["Rent",5000],["Commission Received",3000]];
+F.forEach(([l,v],i)=>{const d=document.createElement("div");d.innerHTML=`<label>${l}<input type="number" id="f${i}" value="${v}" oninput="calc()"></label>`;$("inp").appendChild(d)});
+function calc(){const v=F.map((_,i)=>+$("f"+i).value||0);const c=v[2]+v[1]-v[3],g=v[0]-c,n=g+v[6]-v[4]-v[5];const f=x=>"Rs. "+x.toLocaleString();$("c").textContent=f(c);$("g").textContent=f(g);$("n").textContent=f(n)+(n<0?" (Loss)":"")}calc();
+</script></body></html>
